@@ -27,18 +27,18 @@ public class AlbumService {
         return jpaAlbumRepository.save(album);
     }
 
-    public Album findById(UUID id) {
+    public Album findById(Long id) {
         return jpaAlbumRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Album no encontrado"));
     }
 
-    public Album update(UUID id, AlbumDTO dto) {
+    public Album update(Long id, AlbumDTO dto) {
         Album album = findById(id);
         album.setNombreAlbum(dto.getNombreAlbum());
         return jpaAlbumRepository.save(album);
     }
 
-    public void delete(UUID id) {
+    public void delete(Long id) {
         jpaAlbumRepository.deleteById(id);
     }
 }

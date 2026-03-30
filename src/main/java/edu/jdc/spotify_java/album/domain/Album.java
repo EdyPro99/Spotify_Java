@@ -17,9 +17,9 @@ import java.util.UUID;
 public class Album {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_album")
-    private UUID idAlbum;
+    private Long idAlbum;
 
     @Column(name = "nombre_album")
     private String nombreAlbum;
